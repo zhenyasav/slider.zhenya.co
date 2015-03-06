@@ -1,0 +1,6 @@
+[submodule "packages/zhenya:boilerplate"]
+	path = packages/zhenya:boilerplate
+	url = git@github.com:zhenyasav/meteor-boilerplate.git
+[submodule "packages/zhenya:slider"]
+	path = packages/zhenya:slider
+	url = git@github.com:zhenyasav/slider.git
