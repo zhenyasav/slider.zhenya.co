@@ -18,8 +18,15 @@
 	<div class="group center">
 		{{>slider}}
 	</div>
-	<div class="group center">
-		<h2>Vertical</h2>
-		{{>slider orientation="vertical"}}
+	<div class="group features center">
+		<ul>
+		{{#each features}}<li>{{this}}</li>{{/each}}
+		</ul>
+	</div>
+	<div class="group">
+		<pre>orientation: vertical</pre>
+		<div class="demo center">
+			{{>slider orientation="vertical"}}
+		</div>
 	</div>
 </template>
