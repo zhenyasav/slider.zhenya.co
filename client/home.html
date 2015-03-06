@@ -1,0 +1,25 @@
+<head>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.min.css" />
+	<!--[if lt IE 9]>
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/github-fork-ribbon-css/0.1.1/gh-fork-ribbon.ie.min.css" />
+	<![endif]-->
+</head>
+
+<template name="home">
+	<div class="github-fork-ribbon-wrapper right">
+        <div class="github-fork-ribbon">
+            <a href="https://github.com/zhenyasav/slider">Fork me on GitHub</a>
+        </div>
+    </div>
+	<div class="jumbotron group center">
+		<h1>Slider</h1>
+		<p>An HTML5 slider control</p>
+	</div>
+	<div class="group center">
+		{{>slider}}
+	</div>
+	<div class="group center">
+		<h2>Vertical</h2>
+		{{>slider orientation="vertical"}}
+	</div>
+</template>
