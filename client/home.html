@@ -16,17 +16,21 @@
 		<p>An HTML5 control</p>
 	</div>
 	<div class="group center">
-		{{>slider}}
+		{{>slider step=0.1}}
 	</div>
 	<div class="group features center">
 		<ul>
 		{{#each features}}<li>&#10025; {{this}}</li>{{/each}}
 		</ul>
 	</div>
+
+	{{#each demos}}
 	<div class="group">
-		<pre>orientation: "vertical"</pre>
+		<pre>{{format}}</pre>
 		<div class="demo center">
-			{{>slider orientation="vertical"}}
+			{{>slider}}
 		</div>
 	</div>
+	{{/each}}
+
 </template>
