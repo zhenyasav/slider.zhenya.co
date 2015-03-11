@@ -15,6 +15,14 @@ body {
 	padding: 20px;
 }
 
+.narrow {
+	max-width: 512px;
+}
+
+.wide {
+	max-width: 712px;
+}
+
 .jumbotron {
 	font-size: 200%;
 	margin-top: 30px;
@@ -25,7 +33,7 @@ body {
 }
 
 h2 {
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	font-weight: 300;
 }
 
@@ -34,15 +42,6 @@ ul {
 	li {
 		margin-left: 40px;
 	}
-}
-
-pre {
-	font-family: "Ubuntu Mono", monospace;
-	background-color: @light;
-	color: @dark;
-	padding: 20px;
-	margin-bottom: 15px;
-	.border-radius(4px);
 }
 
 .features {
@@ -57,3 +56,46 @@ pre {
 		}
 	}
 }
+
+.group {
+	table {
+		width: 100%;
+		border-collapse: collapse;
+		td {
+			width: 50%;
+			vertical-align: top;
+		}
+
+		td:first-child {
+			padding-right: 10px;
+		}
+	}
+
+	pre {
+		font-family: "Ubuntu Mono", monospace;
+		background-color: @light;
+		color: @dark;
+		padding: 10px 15px;
+		margin-bottom: 15px;
+		.border-radius(4px);
+		vertical-align: top;
+	}
+
+	code {
+		font-family: "Ubuntu Mono", monospace;
+		background-color: @light;
+		color: @dark;
+		.border-radius(4px);
+		padding: 2px 5px;
+	}
+
+	p+p {
+		margin-top: 10px;
+	}
+
+	.demo {
+		margin: 0 auto;
+		margin-top: 20px;
+	}
+}
+

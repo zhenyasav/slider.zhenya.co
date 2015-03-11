@@ -13,24 +13,32 @@ Router.route '/',
 		]
 
 		demos: [
-			
-			min: -0.1
-			max: 0.1
-			step: 0.01
-			label:
-				precision: 2
+
+			name: "Smooth but snappy"
+			description: "The slider range can be quantized, but the dragging experience remains smooth."
+			options:
+				min: 0
+				max: 4
+				step: 2
 		,
-			orientation: "vertical"
+			name: "Small numbers"
+			description: """When dealing with small numbers, floating point representation errors may become more frequent. 
+
+			These are dealt with internally such that `slider.value()` returns nice values as you would expect."""
+			options:
+				min: -0.1
+				max: 0.1
+				step: 0.01
+				label:
+					precision: 2
+		,
+			name: "Vertical"
+			description: "You must specify an explicit height for the slider container in this mode."
+			options: 
+				orientation: "vertical"
 		
 		]
 
 Template.home.helpers
 
-	format: ->
-		format = (v, indent=0) ->
-			_.map v, (val, key) ->
-				val = "\"#{val}\"" if typeof val is 'string'
-				val = "\n" + format val, indent+1 if '[object Object]' is Object.prototype.toString.call val
-				"#{('  ' for t in [0..indent]).join('')}#{key}: #{val}"
-			.join '\n'
-		format @
+	format: -> Slider._.formatObject @options

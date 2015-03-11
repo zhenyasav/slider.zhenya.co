@@ -11,24 +11,30 @@
             <a href="https://github.com/zhenyasav/slider">Fork me on GitHub</a>
         </div>
     </div>
-	<div class="jumbotron group center">
+	<div class="jumbotron group center narrow">
 		<h1>Slider</h1>
 		<p>An HTML5 control</p>
 	</div>
-	<div class="group center">
+	<div class="group center narrow">
 		{{>slider step=0.1}}
 	</div>
-	<div class="group features center">
+	<div class="group features center narrow">
 		<ul>
 		{{#each features}}<li>&#10025; {{this}}</li>{{/each}}
 		</ul>
 	</div>
 
 	{{#each demos}}
-	<div class="group">
-		<pre>{{format}}</pre>
-		<div class="demo center">
-			{{>slider}}
+	<div class="group wide">
+		<h2>{{name}}</h2>
+		<table>
+			<tr>
+				<td><p>{{#markdown}}{{description}}{{/markdown}}</p></td>
+				<td><pre>{{format}}</pre></td>
+			</tr>
+		</table>
+		<div class="demo center narrow">
+			{{>slider options}}
 		</div>
 	</div>
 	{{/each}}
