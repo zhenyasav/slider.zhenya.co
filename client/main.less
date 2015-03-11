@@ -4,9 +4,14 @@
 .reset();
 .shades();
 .utils();
+.colors();
 
 body {
 	color: @darkgray;
+}
+
+a {
+	text-decoration: none;
 }
 
 .group {
@@ -51,8 +56,11 @@ ul {
 			margin: 2px;
 			display: inline-block;
 			padding: 5px 10px;
-			border: 1px solid @lightgray;
+			border: 1px solid lighten(@blue, 30%);
+			color: @blue;
 			.border-radius(20px);
+			//background-color: lighten(@blue, 10%);
+			//color: @white;
 		}
 	}
 }
@@ -96,6 +104,50 @@ ul {
 	.demo {
 		margin: 0 auto;
 		margin-top: 20px;
+	}
+}
+
+.footer {
+	background-color: @light;
+	padding: 30px;
+	margin-top: 30px;
+}
+
+.logo {
+	display: inline-block;
+	@logo: 30px;
+	>* {
+		vertical-align: middle;
+		.transition(all 350ms ease-in-out);
+	}
+	.icon {
+		width: @logo;
+		height: @logo;
+		display: inline-block;
+		background-image: url('/images/logo_white.svg');
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 70%;
+		background-color: darken(@light, 10%);
+	}
+	h2 {
+		text-transform: uppercase;
+		color: @lightgray;
+		font-size: @logo*0.5;
+		margin: 0;
+		margin-top: 5px;
+	}
+
+	&:hover {
+		>* {
+			.transition(all 100ms ease-in-out);
+		}
+		.icon {
+			background-color: @gray;
+		}
+		h2 {
+			color: @gray;
+		}
 	}
 }
 

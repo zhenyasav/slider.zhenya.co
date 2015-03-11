@@ -33,10 +33,18 @@
 				<td><pre>{{format}}</pre></td>
 			</tr>
 		</table>
+		{{#each options}}
 		<div class="demo center narrow">
-			{{>slider options}}
+			{{>slider}}
 		</div>
+		{{/each}}
 	</div>
 	{{/each}}
 
+	<div class="footer center">
+		<a class="logo" href="http://zhenya.co">
+			<span class="icon"></span>
+			<h2>Zhenya.co</h2>
+		</a>
+	</div>
 </template>
