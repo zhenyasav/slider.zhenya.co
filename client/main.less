@@ -15,7 +15,6 @@ a {
 }
 
 .group {
-	max-width: 512px;
 	margin: 10px auto;
 	padding: 20px;
 }
@@ -65,18 +64,12 @@ ul {
 	}
 }
 
-.group {
-	table {
-		width: 100%;
-		border-collapse: collapse;
-		td {
-			width: 50%;
-			vertical-align: top;
-		}
+.clearfix(group);
 
-		td:first-child {
-			padding-right: 10px;
-		}
+.group {
+
+	.group {
+		padding: 0;
 	}
 
 	pre {
@@ -87,6 +80,10 @@ ul {
 		margin-bottom: 15px;
 		.border-radius(4px);
 		vertical-align: top;
+		float: right;
+		display: inline-block;
+		min-width: 30%;
+		margin-left: 15px;
 	}
 
 	code {

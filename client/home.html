@@ -27,16 +27,14 @@
 	{{#each demos}}
 	<div class="group wide">
 		<h2>{{name}}</h2>
-		<table>
-			<tr>
-				<td><p>{{#markdown}}{{description}}{{/markdown}}</p></td>
-				<td><pre>{{format}}</pre></td>
-			</tr>
-		</table>
-		{{#each options}}
-		<div class="demo center narrow">
-			{{>slider}}
+		<div class="group">
+			<pre>{{format}}</pre>
+			{{#markdown}}{{description}}{{/markdown}}
 		</div>
+		{{#each options}}
+			<div class="demo center narrow">
+				{{>slider}}
+			</div>
 		{{/each}}
 	</div>
 	{{/each}}
