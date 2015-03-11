@@ -84,6 +84,8 @@ ul {
 		display: inline-block;
 		min-width: 30%;
 		margin-left: 15px;
+		white-space: normal;
+		max-width: 60%;
 	}
 
 	code {
@@ -144,6 +146,30 @@ ul {
 		}
 		h2 {
 			color: @gray;
+		}
+	}
+}
+
+.events {
+	
+	text-align: center;
+
+	div {
+		display: inline-block;
+		color: @gray;
+		border: 1px solid @gray;
+		margin: 5px;
+		text-transform: uppercase;
+		padding: 5px 10px;
+		font-size: 80%;
+		.border-radius(4px);
+		.transition(all 1s ease-in-out);
+
+		&.flash {
+			background-color: @blue;
+			border-color: @blue;
+			color: @white;
+			.transition(none);
 		}
 	}
 }

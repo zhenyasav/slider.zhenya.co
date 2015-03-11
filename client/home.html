@@ -5,6 +5,14 @@
 	<![endif]-->
 </head>
 
+<template name="events">
+	<div class="events group narrow">
+		<div class="drag light">Drag</div>
+		<div class="change light">Change</div>
+		<div class="transition light">Transition</div>
+	</div>
+</template>
+
 <template name="home">
 	<div class="github-fork-ribbon-wrapper right">
         <div class="github-fork-ribbon">
@@ -28,9 +36,17 @@
 	<div class="group wide">
 		<h2>{{name}}</h2>
 		<div class="group">
+			{{#if format}}
 			<pre>{{format}}</pre>
+			{{/if}}
+			{{#if code}}
+			<pre>{{code}}</pre>
+			{{/if}}
 			{{#markdown}}{{description}}{{/markdown}}
 		</div>
+		{{#if template}}
+			{{>Template.dynamic template=template}}
+		{{/if}}
 		{{#each options}}
 			<div class="demo center narrow">
 				{{>slider}}

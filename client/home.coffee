@@ -49,9 +49,41 @@ Router.route '/',
 			options: [
 				orientation: "vertical"
 			]
-		
+		,
+			name: "Events"
+			description: "Get notified when the slider is dragged, the value changes, or when the control finishes transitioning."
+			template: 'events'
+			code: "slider.events.on('change', function(data) { ... });"
+			options: [{}]
 		]
 
 Template.home.helpers
 
 	format: -> Slider._.formatObject @options?[0]
+
+
+Template.events.rendered = ->
+
+	sliderel = @$ @firstNode
+	.closest '.group.wide'
+	.find '.slider'
+
+	events = [
+		'change'
+		'transition'
+		'drag'
+	]
+
+	flash = (el) ->
+		el?.addClass? 'flash'
+		Meteor.setTimeout ->
+			el?.removeClass? 'flash'
+		, 50
+
+	slider = Slider.getInstance sliderel[0]
+
+	elements = {}
+	events.map (e) => 
+		elements[e] = @$ "." + e
+		slider.events.on e, (d) -> flash elements[e]
+
