@@ -55,6 +55,13 @@ Router.route '/',
 			template: 'events'
 			code: "slider.events.on('change', function(data) { ... });"
 			options: [{}]
+		,
+			name: "Form controls"
+			description: "Connect bidirectionally with a form input."
+			template: "positionOutput"
+			options: [
+				formElement: '#position'
+			]
 		]
 
 Template.home.helpers

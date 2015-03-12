@@ -14,6 +14,12 @@ a {
 	text-decoration: none;
 }
 
+input, select, textarea {
+	padding: 5px;
+	border: 1px solid @gray;
+	.border-radius(4px);
+}
+
 .group {
 	margin: 10px auto;
 	padding: 20px;
@@ -154,8 +160,6 @@ ul {
 }
 
 .events {
-	
-	text-align: center;
 
 	div {
 		display: inline-block;
@@ -174,6 +178,12 @@ ul {
 			color: @white;
 			.transition(none);
 		}
+	}
+}
+
+.positionOutput {
+	input {
+		text-align: center;
 	}
 }
 
