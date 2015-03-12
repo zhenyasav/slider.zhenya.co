@@ -22,6 +22,19 @@ Router.route '/',
 				step: 2
 			]
 		,
+			name: "Form controls"
+			description: "Connect bidirectionally with a form input."
+			template: "positionOutput"
+			options: [
+				formElement: '#position'
+			]
+		,
+			name: "Events"
+			description: "Get notified when the slider is dragged, the value changes, or when the control finishes transitioning."
+			template: 'events'
+			code: "slider.events.on('change', function(data) { ... });"
+			options: [{}]
+		,
 			name: "Small numbers"
 			description: """When dealing with small numbers, floating point representation errors may become more frequent. 
 
@@ -49,19 +62,7 @@ Router.route '/',
 			options: [
 				orientation: "vertical"
 			]
-		,
-			name: "Events"
-			description: "Get notified when the slider is dragged, the value changes, or when the control finishes transitioning."
-			template: 'events'
-			code: "slider.events.on('change', function(data) { ... });"
-			options: [{}]
-		,
-			name: "Form controls"
-			description: "Connect bidirectionally with a form input."
-			template: "positionOutput"
-			options: [
-				formElement: '#position'
-			]
+			
 		]
 
 Template.home.helpers
