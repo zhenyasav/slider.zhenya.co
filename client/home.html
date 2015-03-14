@@ -31,7 +31,7 @@
 		<p>An HTML5 control</p>
 	</div>
 	<div class="group center narrow">
-		{{>slider step=0.1}}
+		{{>slider value=value}}
 	</div>
 	<div class="group features center narrow">
 		<ul>
@@ -40,7 +40,7 @@
 	</div>
 
 	{{#each demos}}
-	<div class="group wide">
+	<div class="group wide demo-{{cssClass name}}">
 		<h2>{{name}}</h2>
 		<div class="group">
 			{{#if format}}

@@ -65,33 +65,29 @@ Router.route '/',
 			
 		]
 
+Session.setDefault 'random', 0
+
 Template.home.helpers
 
 	format: -> Slider._.formatObject @options?[0]
 
+	value: -> Session.get 'random'
 
-Template.events.rendered = ->
+flash = (el) ->
+	el?.addClass? 'flash'
+	Meteor.setTimeout ->
+		el?.removeClass? 'flash'
+	, 50
 
-	sliderel = @$ @firstNode
-	.closest '.group.wide'
-	.find '.slider'
+Template.home.events
 
-	events = [
-		'change'
-		'transition'
-		'drag'
-	]
+	'change .demo-events .slider': (e) -> 
+		flash Template.instance()?.$? '.events .change'
 
-	flash = (el) ->
-		el?.addClass? 'flash'
-		Meteor.setTimeout ->
-			el?.removeClass? 'flash'
-		, 50
+	'drag .demo-events .slider': (e) ->
+		flash Template.instance()?.$? '.events .drag'
 
-	slider = Slider.getInstance sliderel[0]
+	'transition .demo-events .slider': (e) ->
+		flash Template.instance()?.$? '.events .transition'
 
-	elements = {}
-	events.map (e) => 
-		elements[e] = @$ "." + e
-		slider.events.on e, (d) -> flash elements[e]
 
