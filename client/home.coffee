@@ -32,7 +32,7 @@ Router.route '/',
 			name: "Events"
 			description: "Get notified when the slider is dragged, the value changes, or when the control finishes transitioning."
 			template: 'events'
-			code: "slider.events.on('change', function(data) { ... });"
+			code: "slider.element.addEventListener('change', function(event) { ... });"
 			options: [{}]
 		,
 			name: "Small numbers"
@@ -51,10 +51,10 @@ Router.route '/',
 			description: "Color in a range of the track. Accepted values are `null`, `lower`, `upper`."
 			options: [
 				fill: "lower"
-				initial: 0.5
+				value: 0.5
 			,
 				fill: "upper"
-				initial: 0.5
+				value: 0.5
 			]
 		,
 			name: "Vertical"
