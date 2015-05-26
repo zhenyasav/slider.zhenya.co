@@ -65,13 +65,11 @@ Router.route '/',
 			
 		]
 
-Session.setDefault 'random', 0
 
 Template.home.helpers
 
 	format: -> Slider._.formatObject @options?[0]
 
-	value: -> Session.get 'random'
 
 flash = (el) ->
 	el?.addClass? 'flash'
